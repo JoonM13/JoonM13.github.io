@@ -1,23 +1,18 @@
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
+    
+   oooo                                 ooo        ooooo 
+   `888                                 `88.       .888' 
+    888  .ooooo.   .ooooo.  ooo. .oo.    888b     d'888  
+    888 d88' `88b d88' `88b `888P"Y88b   8 Y88. .P  888  
+    888 888   888 888   888  888   888   8  `888'   888  
+    888 888   888 888   888  888   888   8    Y     888  
+.o. 88P `Y8bod8P' `Y8bod8P' o888o o888o o8o        o888o 
+`Y888P                                                   
     ----------------------------------------------------------------- 
 
 
-Hi there! Welcome to Cloud9 IDE!
+Welcome to my webpage
 
-To get you started, we included a small hello world application.
-
-1) Open the hello-world.html file
-
-2) Click on the Preview button to open a live preview pane
-
-3) Make some changes to the file, save, watch the preview, and have fun!
-
-Happy coding!
-The Cloud9 IDE team
+I did all the instructions already
 
 
 ## Support & Documentation
