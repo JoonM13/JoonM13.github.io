@@ -32,3 +32,13 @@ h1 {
 	color: #669900;
 	cursor: pointer;
 }
+td {
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#00000;
+}
+th {
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#00000;
+}
