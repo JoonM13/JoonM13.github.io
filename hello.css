@@ -1,9 +1,16 @@
 * {
 	box-sizing: border-box;
-	background-color: thistle;
 }
 h1 {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#top {
+		background-color: navy;
+}
+
+body {
+		background-color: thistle;
 }
 
 #header {
@@ -14,9 +21,16 @@ h1 {
 }
 
 .paragraph {
-	padding: 5px;
+	position: relative;
+	margin: 5px;
+	padding: 15px;
 	border: 1px solid;
 	border-radius: 4px;
 	color: gray;
 	font-family: Arial, sans-serif;
+}
+
+.bottom {
+	position: relative;
+	padding: 10px;
 }
