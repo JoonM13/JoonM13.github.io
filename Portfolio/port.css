@@ -1,0 +1,17 @@
+li {
+    padding: 10px;
+}
+
+p {
+    border: 4px;
+    border-style: solid;
+    border-color: Thistle;
+    border-radius: 10px;
+}
+
+li:active {
+    background-color: lightgrey;
+}
+li {
+    background-color: white;
+}
