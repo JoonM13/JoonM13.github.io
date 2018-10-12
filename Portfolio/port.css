@@ -1,5 +1,6 @@
 li {
     padding: 10px;
+    margin: 5px;
 }
 
 header {
@@ -23,3 +24,24 @@ a {
     height: 50px;
     background-color: black;
 }
+
+footer {
+    font-size: 12px;
+    padding: 20px 0;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer .col-sm-8 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer .col-sm-1 {
+    display: flex;
+    justify-content: center;
+    padding: 2px 0;
+}
+
