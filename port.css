@@ -7,27 +7,11 @@ header {
     padding: 15px;
 }
 
-li:active {
-    background-color: grey;
-}
-header h1 {
-    color: white;
-    background-color: black;
-    font-weight: 400;
-}
-
-a {
-    color: white;
-}
-
-.jumbotron {
-    height: 50px;
-    background-color: black;
-}
 
 footer {
     font-size: 12px;
     padding: 20px 0;
+    margin: 50px;
 }
 
 footer ul {
@@ -44,4 +28,3 @@ footer .col-sm-1 {
     justify-content: center;
     padding: 2px 0;
 }
-
