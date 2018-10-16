@@ -28,3 +28,11 @@ footer .col-sm-1 {
     justify-content: center;
     padding: 2px 0;
 }
+
+.home {
+    padding: 20px;
+    margin: 20px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: lightgrey;
+}
