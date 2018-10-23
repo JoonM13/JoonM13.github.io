@@ -1,0 +1,65 @@
+li {
+    padding: 10px;
+    margin: 5px;
+}
+
+header {
+    padding: 5px;
+}
+
+header h1 {
+    color: white;
+    background-color: black;
+    font-weight: 400;
+}
+
+a {
+    color: white;
+}
+
+.jumbotron {
+    height: 50px;
+    background-color: black;
+}
+
+footer {
+    font-size: 12px;
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: lightgrey;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer .col-sm-8 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer .col-sm-1 {
+    display: flex;
+    justify-content: center;
+    padding: 2px 0;
+}
+
+.nav-pills > li > .active {
+    background-color: grey!important;
+}
+
+.nav-link > li > hover{
+    color: grey!important;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  color: grey;
+}
+
+.home {
+    padding: 20px;
+    margin: 20px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: lightgrey;
+}
