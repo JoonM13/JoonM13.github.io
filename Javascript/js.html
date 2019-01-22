@@ -1,0 +1,140 @@
+<html>
+<head>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="port.css" type="text/css">
+<meta charset="UTF-8">
+<title>JS Workspace</title>
+</head>
+<body>
+    <div class="row">
+        <h1 class="col-sm-4" onclick=wario()>Javascript Workspace</h1>
+        <p class ="col-sm-4" id="pName" onclick=inputName()></p>
+        <p class="col-sm-4" id="pSCB">Scoreboard</p>
+    </div>
+    <div class="row">
+        <button type="button" onclick=clkmeBld()>Click me blud</button>
+        <button type="button" onclick=clkmeCuz()>Click me cuz</button>  
+        <button type="button" onclick=addColor()>Add to the scoreboard!</button>
+    </div>
+    <br>
+    <button type="button" onclick=adder()>Adder</button>
+    <button type="button" onclick=picChange() id="upgdBtn">Upgrade!</button>
+    <button type="button" onclick=showIMG()>Show Image</button>
+    <button type="button" onclick=hideIMG()>Hide Image</button>
+    <p id="pAdd">4 + 3</p>
+<!--    <form id="frm1" action="/action_page.php">
+        Enter your aesthetic desires: <input type="text" name="fname" id="aesthetic"><br><br>
+        <input type="button" onclick="myFunction()" value="Submit">
+    </form>                                                                                         -->
+    <p id="pWord"></p>
+    <img src="cpu.jpg" height="250px" width="300px" id="pic" />
+    <br>
+    
+<script>
+    var name = 'Juan' + ' ' + 'Marquez';
+    document.getElementById('pName').innerHTML = name;
+    
+    var word = 'F o r t n i t e ' + ' ' + ' B a t t l e ' + ' ' + ' R o y a l e ';
+    document.getElementById('pWord').innerHTML = word;
+    document.getElementById('pWord').style.color = '#778899';
+    document.getElementById('pWord').style.fontSize = '27px';
+    
+    var w = 7;
+    
+    
+    var button2 = document.createElement('button');
+    document.body.appendChild(button2);
+    button2.innerHTML = 'Clack';
+    button2.setAttribute('onclick', 'picChange()');
+    
+    var pic = document.getElementById('pic');
+    
+    var add2 = document.createElement('button');
+    document.body.appendChild(add2);
+    add2.innerHTML = 'Adder pt. 2';
+    add2.setAttribute('onclick', 'adder()');
+    
+    var state = 'intel';
+    
+    if (w > 6){
+        document.getElementById('pName').innerHTML = 'Jotaro Kujo';
+    } else {
+        document.getElementById('pName').innerHTML = 'Joseph Joestar';
+    }
+    
+    function showIMG(){
+        pic.style.display = 'block';
+    }
+    
+    function hideIMG(){
+        pic.style.display = 'none';
+    }
+    
+    function wario(){
+        document.getElementById('pic').src = 'wario.png';
+        document.getElementById('upgdBtn').innerHTML = 'WA!';
+    }
+    
+    function picChange(){
+        if (state == 'intel'){
+            document.getElementById('pic').src = 'ryzen.jpg';
+            document.getElementById('upgdBtn').innerHTML = 'Downgrade!';
+            state = 'amd';
+        }
+        else if (state =='amd') {
+            document.getElementById('pic').src = 'cpu.jpg';
+            document.getElementById('upgdBtn').innerHTML = 'Upgrade!';
+            state = 'luigi';
+        }
+        else if (state == 'luigi'){
+            document.getElementById('pic').src = 'luigi.png';
+            document.getElementById('upgdBtn').innerHTML = 'Upgrade Further!';
+            state = 'waluigi';
+        }
+        else if (state == 'waluigi'){
+            document.getElementById('pic').src = 'waluigi.jpg';
+            document.getElementById('upgdBtn').innerHTML = 'Perfection.';
+            state = 'intel';
+        }
+        }
+    
+    function inputName(){
+        var inputName = prompt('Change your username: ', '');
+        if (inputName == null || inputName == '') {
+        inputName = document.getElementById('pName').innerHTML; 
+        }
+        document.getElementById('pName').innerHTML = inputName;
+    }
+    
+    function clkmeBld(){
+        var p1 = document.getElementById('pSCB');
+        p1.innerHTML = 'wus poppin blood';
+        p1.style.fontSize = '35px';
+        p1.style.color = '#DC143C';
+    }
+    function adder(){
+        var x = 3;
+        var y = 4;
+        var z = x + y;
+        var pAdd = document.getElementById('pAdd');
+        pAdd.innerHTML = 'Answer: ' + z;
+        alert('The answer is ' + z);
+    }
+    
+    function clkmeCuz(){
+        var p2 = document.getElementById('pSCB');
+        p2.innerHTML = 'wus poppin cuz';
+        p2.style.fontSize = '35px';
+        p2.style.color = '#87CEEB';
+    }
+    function addColor(){
+        var z = 8;
+        var v = 13;
+        var pSCB = document.getElementById('pSCB');
+        pSCB.innerHTML = z + v;
+        pSCB.style.color = '#6B8E23';
+        pSCB.style.fontSize = '35px';
+    }  
+</script>
+</body>
+</html>
