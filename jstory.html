@@ -63,7 +63,14 @@
         font-size: 24px;
         color: gold;
         position: absolute;
-        bottom: 3%;
+        bottom: 6%;
+    }
+    #cash{
+        font-size: 24px;
+        color: gold;
+        position: absolute;
+        left: 20%;
+        bottom: 6%;
     }
     #startgame{
         color: gold;
@@ -97,6 +104,7 @@
             <h1 id="startgame" onclick=intro()>Click to start game.</h1>
             <p id="text"></p>
             <p id="hp"></p>
+            <p id="cash"></p>
         </div>
         <div id="buttons">
             <button id="b1" type="button" class="btn btn-secondary" onclick=buttonclick(1)></button>
@@ -119,6 +127,9 @@
     var b4 = document.getElementById('b4');
     var b5 = document.getElementById('b5');
     var hp = 3;
+    var ogText;
+    var shopKeep = 3;
+    var money;
     
     b1.style.display = 'none';
     b2.style.display = 'none';
@@ -127,6 +138,25 @@
     b5.style.display = 'none';
     
     graphic.style.display = 'none';
+    
+    
+    
+    function shop(){
+        text.innerHTML = 'Welcome to the shop! You can buy armor for 40, a bludgeoner for 100, or a fortune scroll for 20.';
+        b1.style.display = 'block';
+        b2.style.display = 'block';
+        b3.style.display = 'block';
+        b4.style.display = 'block';
+        b1.className = 'btn btn-secondary';
+        b2.className = 'btn btn-secondary';
+        b3.className = 'btn btn-dark';
+        b4.className = 'btn btn-secondary';
+        b1.innerHTML = 'Armor';
+        b2.innerHTML = 'Bludgeoner';
+        b3.innerHTML = 'Out of Stock';
+        b4.innerHTML = 'Go Back';
+        level = 500;
+    }
     
     function intro(){
         graphic.style.display = 'block';
@@ -139,7 +169,9 @@
         b3.style.display = 'none';
         b4.style.display = 'none';
         b5.style.display = 'none';
-        
+        money = 20;
+        hpCheck();
+        moneyCheck();
     }
     
     function intro2(){
@@ -218,16 +250,16 @@
     }
     
     function gameOver4(){
-        text.innerHTML = 'You are a hero amongst your people as no one really liked the mysterious handicapped aristocrat. You bask in your glory until a later date, fair Punctor.';
+        text.innerHTML = 'You are a hero amongst your people as no one really liked the mysterious handicapped aristocrat. You advance towards your fate as you decide your combat skills need to be further proven.';
         graphic.src = 'gameassets/endgame.png';
-        b5.innerHTML = 'Start Over';
-        b1.style.display = 'none';
+        b1.innerHTML = 'Continue';
+        b1.style.display = 'block';
         b2.style.display = 'none';
         b3.style.display = 'none';
         b4.style.display = 'none';
-        b5.style.display = 'block';
+        b5.style.display = 'none';
         hp = 3;
-        level = 97;
+        level = 9;
     }
     
     function fightIntro(){
@@ -304,6 +336,19 @@
         b3.style.display = 'none';
         b4.style.display = 'none';
     }
+    
+    function crossroads(stage){
+        text.innerHTML = 'Where would you like to go?';
+        if (stage == 1){
+            b1.style.display = 'block';
+            b2.style.display = 'block';
+            b3.style.display = 'none';
+            b4.style.display = 'none';
+            b1.innerHTML = 'Advance to the next challenge';
+            b2.innerHTML = 'Shop';
+            level = 10;
+        }
+    }
     function hpCheck(){
         document.getElementById('hp').innerHTML = 'HP: ' + hp;
         if (hp <= 0){
@@ -315,8 +360,40 @@
             document.getElementById('hp').innerHTML = 'HP: -1000';
         }
     }
+    function moneyCheck(){
+        document.getElementById('cash').innerHTML = 'Money: ' + money;
+    }
+    function shopCheck(){
+        text.innerHTML = 'Welcome to the shop! You can buy armor for 40, a bludgeoner for 100, or a fortune scroll for 20.';
+        if (shopKeep == 3){
+            ogText = text.innerHTML;
+            text.innerHTML = ogText + ' You can\'t afford that!';
+            shopKeep = shopKeep - 1;
+        } else if (shopKeep == 2){
+            text.innerHTML = ogText + ' What do you take me for, a fool? Buy something or I\'ll make you leave!';
+            shopKeep = shopKeep - 1;
+        } else if (shopKeep == 1){
+            text.innerHTML = 'Get the hell out of my store!';
+            b2.style.display = 'none';
+            b3.style.display = 'none';
+            b1.style.display = 'none';
+        } else if (shopKeep == 4){
+            ogText = text.innerHTML;
+            text.innerHTML = ogText + ' Thank you for your purchase!';
+            shopKeep = 3;
+        }
+    }
     function wrongMove(){
-        text.innerHTML = text.innerHTML + ' Nope! He counters.';
+        if (hp == 3){
+            ogText = text.innerHTML;
+            text.innerHTML = text.innerHTML + ' Nope! He counters.';
+        } else if (hp == 2){
+            text.innerHTML = ogText + ' Wrong move, He counters once more! You\'re badly hurt, be careful!';
+        }
+        hp = hp - 1;
+    }
+    function incrementMoney(){
+            money = money + 20;
     }
     
     function buttonclick(button){
@@ -324,6 +401,31 @@
             if (button == 1){
                 intro2();
                 level = 1;
+            }
+        } else if (level == 500){
+            if (button == 1){
+                if (money < 40){
+                    shopCheck();
+                } else {
+                    shopKeep = 4;
+                    hp = hp + 1;
+                    money = money - 40;
+                    shopCheck();
+                }
+            } else if (button == 2){
+                if (money < 100){
+                    shopCheck();
+                } else {
+                    /*Add a button that one shots a fight*/
+                }
+            } else if (button == 3){
+                if (money < 20){
+                    shopCheck();
+                } else {
+                    /*Add a button that reveals the right move in a fight*/
+                }
+            } else if (button == 4){
+                crossroads(1);
             }
         } else if (level == 97){
             if (button == 5){
@@ -379,7 +481,6 @@
                 level = 7;
             } else {
                 wrongMove();
-                hp = hp - 1;
             }
         } else if (level == 7){
             if (button == 3){
@@ -388,14 +489,26 @@
                 gameOver3();
             } else {
                 fightVictory();
+                incrementMoney();
                 level = 8;
             }
         } else if (level == 8){
             if (button == 1){
                 gameOver4();
             }
+        } else if (level == 9){
+            if (button == 1){
+                crossroads(1);
+            }
+        } else if (level == 10){
+            if (button == 1){
+                /*secFight1();*/
+            } else if (button == 2){
+                shop();
+            }
         }
          hpCheck();
+         moneyCheck();
     }
 </script>
 </body>
