@@ -142,7 +142,8 @@
     
     
     function shop(){
-        text.innerHTML = 'Welcome to the shop! You can buy armor for 40, a bludgeoner for 100, or a fortune scroll for 20.';
+        graphic.src='gameassets/shop.png';
+        text.innerHTML = 'Welcome to Krus\' Wares! You can buy armor for 40, The Bloodgeoner for 100, or a Fortunate Scroll of Truth for 20.';
         b1.style.display = 'block';
         b2.style.display = 'block';
         b3.style.display = 'block';
@@ -169,6 +170,10 @@
         b3.style.display = 'none';
         b4.style.display = 'none';
         b5.style.display = 'none';
+        b4.className = 'btn btn-secondary';
+        b2.className = 'btn btn-secondary';
+        b3.className = 'btn btn-secondary';
+        b1.className = 'btn btn-secondary';
         money = 20;
         hpCheck();
         moneyCheck();
@@ -288,7 +293,7 @@
     }
     
     function fight2(){
-        graphic.src = 'gameassets/fIntro.png';
+        graphic.src = 'gameassets/fstage1.png';
         text.innerHTML = 'Yea, just like that! He is still keeping his hands up. Perhaps he is going for a jab, the mad lad. You could block it. Since he\'s going for a high jab, try a high block';
         b1.innerHTML = 'Punch';
         b2.innerHTML = 'Kick';
@@ -305,8 +310,8 @@
     }
     
     function fight3(){
-        graphic.src = 'gameassets/fIntro.png';
-        text.innerHTML = 'The old man goes for it. Nice block champ you\'re really remembering fast. Everyone is crowding around awaiting your next move as the old man takes a step back. Perhaps he is preparing for a kick?';
+        graphic.src = 'gameassets/fstage1.png';
+        text.innerHTML = 'The old man goes for it. Nice block champ you\'re really remembering fast. Everyone is crowding around awaiting your next move as the old man takes a step back. Perhaps he is preparing for a sweep?';
         b1.innerHTML = 'Punch';
         b2.innerHTML = 'Kick';
         b3.innerHTML = 'High Block';
@@ -322,8 +327,8 @@
     }
     
     function fightEnd(){
-        graphic.src = 'gameassets/fIntro.png';
-        text.innerHTML = 'The crippled man doesn\'t seem to want to continue fighting, go for the final blow and bring honor to your village!';
+        graphic.src = 'gameassets/fstage2.png';
+        text.innerHTML = 'After your block and subsequent brutal counter, the crippled man doesn\'t seem to want to continue fighting, go for the final blow and bring honor to your village!';
         b3.className = 'btn btn-dark';
         b4.className = 'btn btn-dark';
     }
@@ -336,8 +341,24 @@
         b3.style.display = 'none';
         b4.style.display = 'none';
     }
-    
+    function secFight1(){
+        graphic.src = 'gameassets/fIntro.png';
+        text.innerHTML = '';
+        b1.innerHTML = 'Punch';
+        b2.innerHTML = 'Kick';
+        b3.innerHTML = 'High Block';
+        b4.innerHTML = 'Low Block';
+        b1.style.display = 'block';
+        b2.style.display = 'block';
+        b3.style.display = 'block';
+        b4.style.display = 'block';
+        b4.className = 'btn btn-secondary';
+        b1.className = 'btn btn-secondary'; 
+        b3.className = 'btn btn-secondary';
+        b2.className = 'btn btn-secondary';
+}
     function crossroads(stage){
+        graphic.src = 'gameassets/crossroads.png';
         text.innerHTML = 'Where would you like to go?';
         if (stage == 1){
             b1.style.display = 'block';
@@ -502,7 +523,7 @@
             }
         } else if (level == 10){
             if (button == 1){
-                /*secFight1();*/
+                secFight1();
             } else if (button == 2){
                 shop();
             }
